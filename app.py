@@ -5,8 +5,9 @@ from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'your_secret_key_here'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///car_rental.db'
+app.config['SECRET_KEY'] = "N51/W2o3CcgKC66uDAzF/eawBcA7GLgvjVLiKKFXEb3r8BwuWc4kyUDGS+Wx6Qg/wX0Wju2xJfE6gZr/dW6o/w=="
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///car_rental.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://postgres.errstvxigwkyosbuuyus:orrBaR3enS0sfBDi@aws-0-us-east-1.pooler.supabase.com:6543/postgres?sslmode=require&supa=base-pooler.x"
 db = SQLAlchemy(app)
 
 # Models
