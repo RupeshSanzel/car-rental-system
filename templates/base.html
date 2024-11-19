@@ -1,0 +1,112 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental System</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-blue-600 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="{{ url_for('home') }}" class="text-2xl font-bold">CarRental</a>
+            <div class="space-x-4">
+                <a href="{{ url_for('home') }}" class="hover:text-blue-200">Home</a>
+                {% if 'user_id' in session %}
+                    <a href="{{ url_for('my_bookings') }}" class="hover:text-blue-200">My Bookings</a>
+                    <a href="{{ url_for('logout') }}" class="hover:text-blue-200">Logout</a>
+                {% else %}
+                    <a href="{{ url_for('login') }}" class="hover:text-blue-200">Login</a>
+                    <a href="{{ url_for('register') }}" class="hover:text-blue-200">Register</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto mt-8 px-4">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </div>
+    <footer class="footer-section mt-12">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <!-- Company Info -->
+                <div class="footer-col">
+                    <h3 class="footer-title">CarRental</h3>
+                    <p class="footer-text">Your trusted partner for quality car rentals. We provide the best service with competitive prices.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h4 class="footer-subtitle">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="{{ url_for('home') }}">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Our Services -->
+                <div class="footer-col">
+                    <h4 class="footer-subtitle">Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#luxury">Luxury Cars</a></li>
+                        <li><a href="#family">Family Cars</a></li>
+                        <li><a href="#economic">Economic Cars</a></li>
+                        <li><a href="#premium">Premium Cars</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-col">
+                    <h4 class="footer-subtitle">Contact Info</h4>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Rental Street, City, Country</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+1 234 567 8900</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@carrental.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; 2024 CarRental. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms & Conditions</a>
+                    <a href="#faq">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

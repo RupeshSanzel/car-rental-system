@@ -1,0 +1,19 @@
+<!-- templates/car_detail.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<div class="bg-white rounded-lg shadow-md p-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <img src="{{ car.image_url }}" alt="{{ car.make }} {{ car.model }}" class="w-full h-64 object-cover rounded">
+        <div>
+            <h1 class="text-3xl font-bold">{{ car.make }} {{ car.model }}</h1>
+            <p class="text-gray-600 mt-2">Year: {{ car.year }}</p>
+            <p class="text-green-600 font-bold text-2xl mt-4">${{ car.daily_rate }}/day</p>
+            <a href="{{ url_for('book_car', car_id=car.id) }}" 
+               class="mt-6 inline-block bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700">
+                Book Now
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

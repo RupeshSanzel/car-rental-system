@@ -1,0 +1,25 @@
+<!-- templates/my_bookings.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="text-3xl font-bold mb-8">My Bookings</h1>
+
+<div class="space-y-6">
+    {% for booking in bookings %}
+    <div class="bg-white rounded-lg shadow-md p-6">
+        <div class="flex justify-between items-start">
+            <div>
+                <h2 class="text-xl font-bold">{{ booking.car.make }} {{ booking.car.model }}</h2>
+                <p class="text-gray-600">Booking ID: {{ booking.id }}</p>
+                <p class="text-gray-600">Start Date: {{ booking.start_date.strftime('%Y-%m-%d') }}</p>
+                <p class="text-gray-600">End Date: {{ booking.end_date.strftime('%Y-%m-%d') }}</p>
+            </div>
+            <div class="text-right">
+                <p class="text-green-600 font-bold">${{ booking.total_cost }}</p>
+                <p class="text-gray-600">Status: {{ booking.status }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

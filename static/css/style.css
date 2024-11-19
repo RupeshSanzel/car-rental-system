@@ -1,0 +1,381 @@
+/* static/css/style.css */
+/* Custom styles to complement Tailwind CSS */
+.car-image-hover {
+    transition: transform 0.3s ease;
+}
+
+.car-image-hover:hover {
+    transform: scale(1.05);
+}
+
+.custom-shadow {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Custom form styles */
+.form-input:focus {
+    border-color: #3B82F6;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+/* Custom button styles */
+.btn-primary {
+    background-color: #2563EB;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #1D4ED8;
+}
+
+.btn-secondary {
+    background-color: #6B7280;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    transition: background-color 0.2s;
+}
+
+.btn-secondary:hover {
+    background-color: #4B5563;
+}
+
+/* Card hover effects */
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Status badges */
+.status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.status-pending {
+    background-color: #FEF3C7;
+    color: #92400E;
+}
+
+.status-confirmed {
+    background-color: #D1FAE5;
+    color: #065F46;
+}
+
+.status-cancelled {
+    background-color: #FEE2E2;
+    color: #991B1B;
+}
+
+/* Responsive navigation menu */
+@media (max-width: 768px) {
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* Loading spinner */
+.loading-spinner {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #3B82F6;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Flash message animations */
+.flash-message {
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Datepicker custom styles */
+.datepicker-input {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #D1D5DB;
+    border-radius: 0.375rem;
+}
+
+.datepicker-input:focus {
+    outline: none;
+    border-color: #3B82F6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+/* Price display */
+.price-tag {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #059669;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Card styles */
+.car-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Form styles */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #374151;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #D1D5DB;
+    border-radius: 0.375rem;
+    transition: border-color 0.2s;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #3B82F6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+/* Navigation styles */
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    transition: background-color 0.2s;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Container styles */
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+/* Footer Styles */
+.footer-section {
+    background-color: #1a237e;
+    color: #ffffff;
+    padding-top: 3rem;
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding-bottom: 3rem;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.footer-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.footer-subtitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.footer-text {
+    color: #b3e5fc;
+    line-height: 1.6;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+    color: #b3e5fc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: #ffffff;
+    color: #1a237e;
+    transform: translateY(-3px);
+}
+
+.contact-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-info li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    color: #b3e5fc;
+}
+
+.contact-info i {
+    width: 20px;
+    color: #ffffff;
+}
+
+.footer-bottom {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 1.5rem 0;
+}
+
+.footer-bottom-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-bottom p {
+    color: #b3e5fc;
+}
+
+.footer-bottom-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-bottom-links a {
+    color: #b3e5fc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom-links a:hover {
+    color: #ffffff;
+}
+
+/* Responsive Footer Styles */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-bottom-links {
+        justify-content: center;
+    }
+}
+
+/* Make sure the footer stays at the bottom */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1;
+}
